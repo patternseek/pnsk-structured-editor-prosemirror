@@ -1,0 +1,20 @@
+{
+  "name": "pnsk-structured-editor-prosemirror",
+  "license": "MIT",
+  "authors": [
+    "Tolan Blundell <tolan@patternseek.net>"
+  ],
+  "description": "Component that creates a rich text edit area using ProseMirror.",
+  "keywords": [
+    "web-component"
+  ],
+  "main": "pnsk-structured-editor-prosemirror.html",
+  "homepage": "https://github.com/patternseek/pnsk-structured-editor-prosemirror/",
+  "ignore": [
+    "/.*",
+    "/demo/"
+  ],
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
+  }
+}
