@@ -12,6 +12,7 @@
   "homepage": "https://github.com/patternseek/pnsk-structured-editor-prosemirror/",
   "ignore": [
     "/.*",
+    "/node_modules/",
     "/demo/"
   ],
   "dependencies": {
