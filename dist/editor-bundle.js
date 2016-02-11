@@ -17744,7 +17744,9 @@ window.ProseMirror = require("prosemirror/dist/edit").ProseMirror
 require("prosemirror/dist/menu/menubar") // Load menubar module
 require( "prosemirror/dist/parse/markdown" )
 require( "prosemirror/dist/serialize/markdown" )
-
+window.ProseMirrorUtils = {};
+window.ProseMirrorUtils.Schema = require( "prosemirror/dist/model").Schema
+window.ProseMirrorUtils.defaultSchema = require( "prosemirror/dist/model").defaultSchema
 //var editor = new ProseMirror({
 //    place: document.body,
 //    menuBar: true
@@ -17753,7 +17755,7 @@ require( "prosemirror/dist/serialize/markdown" )
 
 
 
-},{"prosemirror/dist/edit":10,"prosemirror/dist/menu/menubar":19,"prosemirror/dist/parse/markdown":32,"prosemirror/dist/serialize/markdown":36}],117:[function(require,module,exports){
+},{"prosemirror/dist/edit":10,"prosemirror/dist/menu/menubar":19,"prosemirror/dist/model":25,"prosemirror/dist/parse/markdown":32,"prosemirror/dist/serialize/markdown":36}],117:[function(require,module,exports){
 (function (global){
 /*! https://mths.be/punycode v1.3.2 by @mathias */
 ;(function(root) {
