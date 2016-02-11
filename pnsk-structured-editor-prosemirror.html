@@ -66,10 +66,13 @@
 
         created: function () {
 
+            var newSchema = new window.ProseMirrorUtils.Schema( window.ProseMirrorUtils.defaultSchema.spec.updateNodes({image: null}))
+
             this.editor =  new window.ProseMirror({
                 place: this.$.editor,
                 menuBar: true,
                 docFormat: "markdown",
+                schema: newSchema,
                 doc: ""
             });
 
