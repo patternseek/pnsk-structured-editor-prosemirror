@@ -67,13 +67,25 @@
 
         created: function () {
 
-            var newSchema = new window.ProseMirrorUtils.Schema( window.ProseMirrorUtils.defaultSchema.spec.updateNodes({image: null}))
+            var menu = window.ProseMirrorUtils.menu;
+            var Schema = window.ProseMirrorUtils.schema.Schema;
+            var defaultSchema = window.ProseMirrorUtils.defaultschema.defaultSchema;
 
+            let mySchema = new Schema(defaultSchema.spec.update({
+                image: null
+            }) );
+            
+            // Change the label for the text type (plain, code, h1 etc) menu from "Type";
+            menu.textblockMenu.options.label = "Text type";
+            
             this.editor =  new window.ProseMirror({
                 place: this.$.editor,
-                menuBar: true,
+                menuBar: {
+                    float: true,
+                //    content: [menu.inlineGroup,[new menu.DropdownSubmenu({ label: "Heading" }, new menu.MenuCommandGroup("textblockHeading"))],menu.historyGroup]
+                },
                 docFormat: "markdown",
-                schema: newSchema,
+                schema: mySchema,
                 doc: ""
             });
 
