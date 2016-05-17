@@ -86,11 +86,12 @@
                 place: this.$.editor,
                 menuBar: {
                     float: true,
-                //    content: [menu.inlineGroup,[new menu.DropdownSubmenu({ label: "Heading" }, new menu.MenuCommandGroup("textblockHeading"))],menu.historyGroup]
                 },
                 docFormat: "markdown",
                 schema: mySchema,
-                doc: ""
+                doc: "",
+                autoInput: false
+                
             });
 
             this.editor.on("change", this._onChange.bind(this) );
