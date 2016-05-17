@@ -19357,7 +19357,9 @@ function isRegExp(obj) { return _class(obj) === '[object RegExp]'; }
 function isFunction(obj) { return _class(obj) === '[object Function]'; }
 
 
-function escapeRE (str) { return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&'); }
+  function escapeRE(str) {
+    return str.replace(/[.?*+^$[\]\\(){}|-]/g, '\\$&');
+  }
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -19565,7 +19567,7 @@ function compile(self) {
   // Build schema condition
   //
   var slist = Object.keys(self.__compiled__)
-                      .filter(function(name) {
+      .filter(function (name) {
                         // Filter disabled & fake schemas
                         return name.length > 0 && self.__compiled__[name];
                       })
@@ -19849,7 +19851,7 @@ LinkifyIt.prototype.testSchemaAt = function testSchemaAt(text, schema, pos) {
  * LinkifyIt#match(text) -> Array|null
  *
  * Returns array of found link descriptions or `null` on fail. We strongly
- * to use [[LinkifyIt#test]] first, for best speed.
+ * recommend to use [[LinkifyIt#test]] first, for best speed.
  *
  * ##### Result match description
  *
@@ -19916,7 +19918,7 @@ LinkifyIt.prototype.tlds = function tlds(list, keepOld) {
 
   this.__tlds__ = this.__tlds__.concat(list)
                                   .sort()
-                                  .filter(function(el, idx, arr) {
+      .filter(function (el, idx, arr) {
                                     return el !== arr[idx - 1];
                                   })
                                   .reverse();
@@ -20093,7 +20095,7 @@ exports.tpl_host_fuzzy_test =
 
 exports.tpl_email_fuzzy =
 
-    '(^|>|' + src_ZCc + ')(' + src_email_name + '@' + tpl_host_fuzzy_strict + ')';
+    '(^|>|\\(|' + src_ZCc + ')(' + src_email_name + '@' + tpl_host_fuzzy_strict + ')';
 
 exports.tpl_link_fuzzy =
     // Fuzzy link can't be prepended with .:/\- and non punctuation.
