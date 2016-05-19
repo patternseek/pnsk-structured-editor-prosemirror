@@ -7194,7 +7194,7 @@ var MarkdownSerializer = function () {
     key: "esc",
     value: function esc(str, startOfLine) {
       str = str.replace(/[`*\\~+\[\]]/g, "\\$&");
-      if (startOfLine) str = str.replace(/^[:#-]/, "\\$&");
+      if (startOfLine) str = str.replace(/^[:#-*]/, "\\$&").replace(/^(\d+)\./, "$1\\.");
       return str;
     }
   }, {
@@ -7318,6 +7318,8 @@ _model.LinkMark.prototype.closeMarkdown = function (state, mark) {
 };
 
 _model.CodeMark.prototype.openMarkdown = _model.CodeMark.prototype.closeMarkdown = "`";
+
+
 },{"../format":21,"../model":33}],27:[function(require,module,exports){
 "use strict";
 
